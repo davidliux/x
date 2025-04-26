@@ -1,0 +1,19 @@
+# Flask 核心
+Flask
+
+# ORM 和数据库
+SQLAlchemy
+Flask-SQLAlchemy
+psycopg2-binary  # PostgreSQL 驱动 (注意: 生产环境可能需要 psycopg2)
+Flask-Migrate  # 数据库迁移工具
+
+# API 相关
+Flask-RESTful  # (可选) 用于快速构建 REST API
+Flask-Cors     # 处理跨域请求
+
+# 配置管理
+python-dotenv  # 从 .env 文件加载环境变量
+
+# 其他
+requests      # 用于调用外部 API (例如支付接口或工具后端)
+gunicorn      # (可选) WSGI 服务器，用于生产部署 
