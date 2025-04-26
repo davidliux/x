@@ -1,0 +1,20 @@
+# Flask 核心
+Flask
+
+# ORM 和数据库
+SQLAlchemy
+Flask-SQLAlchemy
+psycopg2-binary
+Flask-Migrate
+
+# API 相关
+# Flask-RESTful
+Flask-Cors
+
+# 配置管理
+python-dotenv
+
+# 其他
+requests
+gunicorn
+werkzeug

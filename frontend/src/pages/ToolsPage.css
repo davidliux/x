@@ -1,0 +1,34 @@
+/* ToolsPage.css */
+
+.tools-page {
+  padding: 2rem 1rem; /* 页面内边距 */
+}
+
+.tools-page .page-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 12px rgba(173, 216, 230, 0.6); /* 浅蓝色光晕 */
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 响应式网格 */
+  gap: 2.5rem; /* 卡片间距 */
+  max-width: 1300px; /* 限制最大宽度 */
+  margin: 0 auto; /* 居中 */
+}
+
+/* 用于应用交错延迟的包装器 */
+.tool-card-wrapper {
+  /* 这个包装器本身没有样式，只用于动画延迟选择器 */
+}
+
+/* 使用 :nth-child 实现交错延迟效果 */
+.tool-card-wrapper:nth-child(1) .tool-card-animation { animation-delay: 0.1s; }
+.tool-card-wrapper:nth-child(2) .tool-card-animation { animation-delay: 0.2s; }
+.tool-card-wrapper:nth-child(3) .tool-card-animation { animation-delay: 0.3s; }
+.tool-card-wrapper:nth-child(4) .tool-card-animation { animation-delay: 0.4s; }
+.tool-card-wrapper:nth-child(5) .tool-card-animation { animation-delay: 0.5s; }
+/* ...根据需要添加更多 */ 

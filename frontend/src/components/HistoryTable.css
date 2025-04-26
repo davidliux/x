@@ -1,0 +1,57 @@
+/* HistoryTable.css */
+
+.history-table-container {
+  overflow-x: auto; /* 允许表格水平滚动（在小屏幕上） */
+  margin-top: 1rem;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse; /* 合并边框 */
+  font-size: 0.9rem;
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15); /* 青色细分割线 */
+}
+
+.history-table th {
+  color: #a0a0c0; /* 表头颜色 */
+  font-weight: bold;
+  white-space: nowrap; /* 防止表头换行 */
+}
+
+.history-table tbody tr:last-child td {
+  border-bottom: none; /* 最后一行无下边框 */
+}
+
+.history-table tbody tr:hover {
+  background-color: rgba(0, 255, 255, 0.05); /* 悬停时轻微高亮 */
+}
+
+/* 特定列的样式可以单独添加，例如金额 */
+.transaction-amount-positive {
+  color: #00ff00; /* 绿色正数 */
+  font-weight: bold;
+}
+.transaction-amount-negative {
+  color: #ff4d4d; /* 红色负数 */
+}
+
+.usage-status-success {
+    color: #00ff00;
+}
+
+.usage-status-failed {
+    color: #ff4d4d;
+}
+
+/* 空数据提示 */
+.history-empty-message {
+  text-align: center;
+  color: #888;
+  padding: 2rem 0;
+} 

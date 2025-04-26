@@ -1,0 +1,123 @@
+/* Layout.css */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #1a1a2e; /* 深蓝紫色背景，初步体现科技感 */
+  color: #e0e0e0; /* 浅灰色文字 */
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(26, 26, 46, 0.8); /* 半透明头部背景 */
+  backdrop-filter: blur(5px); /* 轻微玻璃模糊效果 */
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2); /* 青色细边框，增加科技感 */
+  position: sticky; /* 让头部导航固定 */
+  top: 0;
+  z-index: 1000;
+}
+
+/* 定义标题入场动画 */
+@keyframes titleEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 将原 wrapper 的 opacity: 0 移除，改为应用动画 */
+.main-title-wrapper {
+  /* opacity: 0; */ /* 移除这个 */
+}
+
+/* 应用动画到包装器 */
+.title-enter-animation {
+  animation: titleEnter 0.8s ease-out forwards; /* 应用动画 */
+  /* forwards 保持动画结束状态 */
+}
+
+/* 将原 .logo a 的样式应用到实际的链接上 */
+.logo .main-title-link {
+  color: #00ffff; /* 青色 Logo 文字 */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 5px #00ffff; /* 轻微霓虹光晕 */
+  /* transition 或其他非动画基础样式可以放在这里 */
+}
+
+.main-nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #00ffff; /* 悬停时更强的光晕 */
+}
+
+/* 给导航链接添加下划线动画 */
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00ffff; /* 青色下划线 */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.main-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* 退出按钮样式 (与导航链接类似，但用 button 实现) */
+.logout-button {
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: inherit; /* 继承导航字体大小 */
+  font-family: inherit;
+  margin-left: 1.5rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logout-button:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #ff4d4d; /* 红色光晕表示危险操作 */
+}
+
+.main-content {
+  flex-grow: 1; /* 让内容区占据剩余空间 */
+  padding: 2rem;
+}
+
+.app-footer {
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+/* App.css 中原有的 header 样式可以考虑移到这里或删除 */
+/* 确保清除 App.css 中与新 header 冲突的样式 */ 
